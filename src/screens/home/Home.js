@@ -10,9 +10,14 @@ export const Home = ({ navigation }) => {
         navigation.navigate("ContactUs");
     }
 
+    const onViewCatalogPressed = () => {
+        navigation.navigate("CatalogList");
+    }
+
     return (
         <View style={styles.mainView}>
             <AppButton onPress={onContactUsPressed} title="Contact Us" />
+            <AppButton style={styles.button} onPress={onViewCatalogPressed} title="View Catalog" />
         </View>
     )
 }
@@ -25,5 +30,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: Dimens.horizontalPadding,
         backgroundColor: Colors.white
     },
-
+    button: {
+        marginTop: Dimens.verticalPadding
+    }
 })

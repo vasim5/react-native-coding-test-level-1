@@ -1,13 +1,16 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
 import { RouteNavigator } from './src/services/Routes';
+import { Provider } from 'react-redux'
+import store from './src/redux';
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <RouteNavigator />
-      <StatusBar style="auto" />
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <RouteNavigator />
+        <StatusBar style="auto" />
+      </NavigationContainer>
+    </Provider>
   );
 }
